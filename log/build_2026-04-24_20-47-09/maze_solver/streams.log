@@ -1,0 +1,47 @@
+[0.011s] Invoking command in '/home/pes1ug23cs131/501111/build/maze_solver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pes1ug23cs131/turtlebot3_ws/install/turtlebot3_teleop:/home/pes1ug23cs131/turtlebot3_ws/install/turtlebot3_example:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/pes1ug23cs131/501111/src/maze_solver -DCMAKE_INSTALL_PREFIX=/home/pes1ug23cs131/501111/install/maze_solver
+[0.089s] -- The C compiler identification is GNU 13.3.0
+[0.177s] -- The CXX compiler identification is GNU 13.3.0
+[0.208s] -- Detecting C compiler ABI info
+[0.367s] -- Detecting C compiler ABI info - done
+[0.380s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.381s] -- Detecting C compile features
+[0.382s] -- Detecting C compile features - done
+[0.398s] -- Detecting CXX compiler ABI info
+[0.554s] -- Detecting CXX compiler ABI info - done
+[0.568s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.568s] -- Detecting CXX compile features
+[0.569s] -- Detecting CXX compile features - done
+[0.576s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.819s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.148s] -- Configuring done (1.1s)
+[1.152s] -- Generating done (0.0s)
+[1.154s] -- Build files have been written to: /home/pes1ug23cs131/501111/build/maze_solver
+[1.164s] Invoked command in '/home/pes1ug23cs131/501111/build/maze_solver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pes1ug23cs131/turtlebot3_ws/install/turtlebot3_teleop:/home/pes1ug23cs131/turtlebot3_ws/install/turtlebot3_example:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/pes1ug23cs131/501111/src/maze_solver -DCMAKE_INSTALL_PREFIX=/home/pes1ug23cs131/501111/install/maze_solver
+[1.165s] Invoking command in '/home/pes1ug23cs131/501111/build/maze_solver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pes1ug23cs131/turtlebot3_ws/install/turtlebot3_teleop:/home/pes1ug23cs131/turtlebot3_ws/install/turtlebot3_example:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/pes1ug23cs131/501111/build/maze_solver -- -j8 -l8
+[1.215s] Invoked command in '/home/pes1ug23cs131/501111/build/maze_solver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pes1ug23cs131/turtlebot3_ws/install/turtlebot3_teleop:/home/pes1ug23cs131/turtlebot3_ws/install/turtlebot3_example:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/pes1ug23cs131/501111/build/maze_solver -- -j8 -l8
+[1.233s] Invoking command in '/home/pes1ug23cs131/501111/build/maze_solver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pes1ug23cs131/turtlebot3_ws/install/turtlebot3_teleop:/home/pes1ug23cs131/turtlebot3_ws/install/turtlebot3_example:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/pes1ug23cs131/501111/build/maze_solver
+[1.243s] -- Install configuration: ""
+[1.243s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/maze_solver/launch
+[1.244s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/maze_solver/launch/sim.launch.py
+[1.244s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/maze_solver/worlds
+[1.244s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/maze_solver/worlds/maze_world.sdf
+[1.244s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/maze_solver/models
+[1.244s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/maze_solver/models/robot.sdf
+[1.244s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/lib/maze_solver/maze_solver.py
+[1.244s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/lib/maze_solver/lidar_processor.py
+[1.244s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/ament_index/resource_index/package_run_dependencies/maze_solver
+[1.244s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/ament_index/resource_index/parent_prefix_path/maze_solver
+[1.245s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/maze_solver/environment/ament_prefix_path.sh
+[1.245s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/maze_solver/environment/ament_prefix_path.dsv
+[1.245s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/maze_solver/environment/path.sh
+[1.245s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/maze_solver/environment/path.dsv
+[1.245s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/maze_solver/local_setup.bash
+[1.245s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/maze_solver/local_setup.sh
+[1.245s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/maze_solver/local_setup.zsh
+[1.245s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/maze_solver/local_setup.dsv
+[1.246s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/maze_solver/package.dsv
+[1.246s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/ament_index/resource_index/packages/maze_solver
+[1.246s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/maze_solver/cmake/maze_solverConfig.cmake
+[1.246s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/maze_solver/cmake/maze_solverConfig-version.cmake
+[1.246s] -- Installing: /home/pes1ug23cs131/501111/install/maze_solver/share/maze_solver/package.xml
+[1.249s] Invoked command in '/home/pes1ug23cs131/501111/build/maze_solver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pes1ug23cs131/turtlebot3_ws/install/turtlebot3_teleop:/home/pes1ug23cs131/turtlebot3_ws/install/turtlebot3_example:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/pes1ug23cs131/501111/build/maze_solver

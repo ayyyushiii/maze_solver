@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>maze_solver</name>
+  <version>0.0.1</version>
+  <description>BUG2 maze solver with SLAM mapper</description>
+  <maintainer email="student@college.com">student</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclpy</depend>
+  <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>ros_gz_sim</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

@@ -1,0 +1,319 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+<world name="maze_world">
+
+  <!-- ============================== -->
+  <!-- GAZEBO HARMONIC / JAZZY READY -->
+  <!-- ============================== -->
+
+  <physics name="1ms" type="ignored">
+    <max_step_size>0.001</max_step_size>
+    <real_time_factor>1.0</real_time_factor>
+  </physics>
+
+  <plugin filename="gz-sim-physics-system"
+          name="gz::sim::systems::Physics"/>
+
+  <plugin filename="gz-sim-user-commands-system"
+          name="gz::sim::systems::UserCommands"/>
+
+  <plugin filename="gz-sim-scene-broadcaster-system"
+          name="gz::sim::systems::SceneBroadcaster"/>
+
+  <plugin filename="gz-sim-sensors-system"
+          name="gz::sim::systems::Sensors"/>
+
+  <!-- ============================== -->
+  <!-- LIGHT -->
+  <!-- ============================== -->
+
+  <light type="directional" name="sun">
+    <cast_shadows>true</cast_shadows>
+    <pose>0 0 10 0 0 0</pose>
+    <diffuse>1 1 1 1</diffuse>
+    <specular>0.3 0.3 0.3 1</specular>
+    <direction>-0.5 0.1 -0.9</direction>
+  </light>
+
+  <!-- ============================== -->
+  <!-- WHITE FLOOR -->
+  <!-- ============================== -->
+
+  <model name="ground_plane">
+    <static>true</static>
+    <link name="link">
+
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>20 20</size>
+          </plane>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>20 20</size>
+          </plane>
+        </geometry>
+
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+
+  <!-- ============================== -->
+  <!-- WALL TEMPLATE STYLE -->
+  <!-- Green Walls -->
+  <!-- ============================== -->
+
+  <!-- OUTER WALLS -->
+
+  <model name="left_wall">
+    <static>true</static>
+    <pose>-4 0 0.5 0 0 0</pose>
+    <link name="link">
+      <collision name="c">
+        <geometry><box><size>0.1 8 1</size></box></geometry>
+      </collision>
+      <visual name="v">
+        <geometry><box><size>0.1 8 1</size></box></geometry>
+        <material>
+          <ambient>0 0.8 0 1</ambient>
+          <diffuse>0 0.8 0 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="right_wall">
+    <static>true</static>
+    <pose>4 0 0.5 0 0 0</pose>
+    <link name="link">
+      <collision name="c">
+        <geometry><box><size>0.1 8 1</size></box></geometry>
+      </collision>
+      <visual name="v">
+        <geometry><box><size>0.1 8 1</size></box></geometry>
+        <material>
+          <ambient>0 0.8 0 1</ambient>
+          <diffuse>0 0.8 0 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+  <!-- TOP split wall (exit gap in center) -->
+  <model name="top_left">
+    <static>true</static>
+    <pose>-2.4 4 0.5 0 0 0</pose>
+    <link name="link">
+      <collision name="c">
+        <geometry><box><size>3.2 0.1 1</size></box></geometry>
+      </collision>
+      <visual name="v">
+        <geometry><box><size>3.2 0.1 1</size></box></geometry>
+        <material>
+          <ambient>0 0.8 0 1</ambient>
+          <diffuse>0 0.8 0 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="top_right">
+    <static>true</static>
+    <pose>2.4 4 0.5 0 0 0</pose>
+    <link name="link">
+      <collision name="c">
+        <geometry><box><size>3.2 0.1 1</size></box></geometry>
+      </collision>
+      <visual name="v">
+        <geometry><box><size>3.2 0.1 1</size></box></geometry>
+        <material>
+          <ambient>0 0.8 0 1</ambient>
+          <diffuse>0 0.8 0 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+  <!-- BOTTOM split wall (spawn gap center) -->
+  <model name="bottom_left">
+    <static>true</static>
+    <pose>-2.4 -4 0.5 0 0 0</pose>
+    <link name="link">
+      <collision name="c">
+        <geometry><box><size>3.2 0.1 1</size></box></geometry>
+      </collision>
+      <visual name="v">
+        <geometry><box><size>3.2 0.1 1</size></box></geometry>
+        <material>
+          <ambient>0 0.8 0 1</ambient>
+          <diffuse>0 0.8 0 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="bottom_right">
+    <static>true</static>
+    <pose>2.4 -4 0.5 0 0 0</pose>
+    <link name="link">
+      <collision name="c">
+        <geometry><box><size>3.2 0.1 1</size></box></geometry>
+      </collision>
+      <visual name="v">
+        <geometry><box><size>3.2 0.1 1</size></box></geometry>
+        <material>
+          <ambient>0 0.8 0 1</ambient>
+          <diffuse>0 0.8 0 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+  <!-- ============================== -->
+  <!-- INNER MAZE -->
+  <!-- ============================== -->
+
+  <model name="h1">
+    <static>true</static>
+    <pose>-1.6 2.4 0.5 0 0 0</pose>
+    <link name="link">
+      <collision name="c"><geometry><box><size>1.6 0.1 1</size></box></geometry></collision>
+      <visual name="v">
+        <geometry><box><size>1.6 0.1 1</size></box></geometry>
+        <material><ambient>0 0.8 0 1</ambient><diffuse>0 0.8 0 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="h2">
+    <static>true</static>
+    <pose>0.8 0.8 0.5 0 0 0</pose>
+    <link name="link">
+      <collision name="c"><geometry><box><size>3.2 0.1 1</size></box></geometry></collision>
+      <visual name="v">
+        <geometry><box><size>3.2 0.1 1</size></box></geometry>
+        <material><ambient>0 0.8 0 1</ambient><diffuse>0 0.8 0 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="h3">
+    <static>true</static>
+    <pose>-1.6 -0.8 0.5 0 0 0</pose>
+    <link name="link">
+      <collision name="c"><geometry><box><size>1.6 0.1 1</size></box></geometry></collision>
+      <visual name="v">
+        <geometry><box><size>1.6 0.1 1</size></box></geometry>
+        <material><ambient>0 0.8 0 1</ambient><diffuse>0 0.8 0 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="h4">
+    <static>true</static>
+    <pose>2.4 -0.8 0.5 0 0 0</pose>
+    <link name="link">
+      <collision name="c"><geometry><box><size>3.2 0.1 1</size></box></geometry></collision>
+      <visual name="v">
+        <geometry><box><size>3.2 0.1 1</size></box></geometry>
+        <material><ambient>0 0.8 0 1</ambient><diffuse>0 0.8 0 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="v1">
+    <static>true</static>
+    <pose>-2.4 -2.4 0.5 0 0 0</pose>
+    <link name="link">
+      <collision name="c"><geometry><box><size>0.1 3.2 1</size></box></geometry></collision>
+      <visual name="v">
+        <geometry><box><size>0.1 3.2 1</size></box></geometry>
+        <material><ambient>0 0.8 0 1</ambient><diffuse>0 0.8 0 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="v2">
+    <static>true</static>
+    <pose>-0.8 1.6 0.5 0 0 0</pose>
+    <link name="link">
+      <collision name="c"><geometry><box><size>0.1 3.2 1</size></box></geometry></collision>
+      <visual name="v">
+        <geometry><box><size>0.1 3.2 1</size></box></geometry>
+        <material><ambient>0 0.8 0 1</ambient><diffuse>0 0.8 0 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="v3">
+    <static>true</static>
+    <pose>0.8 3.2 0.5 0 0 0</pose>
+    <link name="link">
+      <collision name="c"><geometry><box><size>0.1 1.6 1</size></box></geometry></collision>
+      <visual name="v">
+        <geometry><box><size>0.1 1.6 1</size></box></geometry>
+        <material><ambient>0 0.8 0 1</ambient><diffuse>0 0.8 0 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="v4">
+    <static>true</static>
+    <pose>0.8 -3.2 0.5 0 0 0</pose>
+    <link name="link">
+      <collision name="c"><geometry><box><size>0.1 1.6 1</size></box></geometry></collision>
+      <visual name="v">
+        <geometry><box><size>0.1 1.6 1</size></box></geometry>
+        <material><ambient>0 0.8 0 1</ambient><diffuse>0 0.8 0 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="v5">
+    <static>true</static>
+    <pose>2.4 1.6 0.5 0 0 0</pose>
+    <link name="link">
+      <collision name="c"><geometry><box><size>0.1 1.6 1</size></box></geometry></collision>
+      <visual name="v">
+        <geometry><box><size>0.1 1.6 1</size></box></geometry>
+        <material><ambient>0 0.8 0 1</ambient><diffuse>0 0.8 0 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+
+  <!-- ============================== -->
+  <!-- GOAL -->
+  <!-- ============================== -->
+
+  <model name="goal_marker">
+    <static>true</static>
+    <pose>0 4.6 0.3 0 0 0</pose>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.6</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1</ambient>
+          <diffuse>0 1 0 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+</world>
+</sdf>
